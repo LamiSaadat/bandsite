@@ -1,0 +1,46 @@
+@use './colors' as *;
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+
+//nav bar
+.header {
+  background-color: $primary-background;
+
+  &__logo {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $primary-text;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__link {
+    padding-bottom: 1rem;
+    width: 100%;
+    text-align: center;
+    
+    &--active {
+      border-bottom: 0.25rem solid $primary-text;
+    }
+  }
+
+  &__item {
+    color: $primary-text;
+  }
+
+}
+
+
