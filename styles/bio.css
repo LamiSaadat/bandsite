@@ -6,14 +6,17 @@ li {
   list-style: none;
 }
 
-.header {
-  background-color: #323232;
-}
-.header__logo {
+.logo {
   font-size: 1.5rem;
   font-weight: 400;
   text-transform: uppercase;
   color: #fff;
+}
+
+.header {
+  background-color: #323232;
+}
+.header__logo {
   text-align: center;
   padding: 1rem;
 }
@@ -31,6 +34,41 @@ li {
 }
 .header__item {
   color: #fff;
+}
+
+.footer {
+  background-color: #323232;
+  color: #fff;
+  padding: 1rem;
+}
+
+.socials__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1rem 0;
+}
+.socials__icon:nth-child(n+1) {
+  padding-left: 1.8rem;
+}
+
+.details {
+  font-size: 0.8125rem;
+  height: 100%;
+}
+.details__name {
+  font-weight: 600;
+  padding: 1rem 0;
+}
+.details__email {
+  padding-top: 1rem;
+}
+
+.copyright__logo {
+  padding-top: 4rem;
+}
+.copyright__text {
+  font-size: 0.8125rem;
+  padding-top: 1rem;
 }
 
 @font-face {

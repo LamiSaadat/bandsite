@@ -8,16 +8,18 @@ li {
   list-style: none;
 }
 
+.logo {
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: $primary-text;
+}
 
 //nav bar
 .header {
   background-color: $primary-background;
 
   &__logo {
-    font-size: 1.5rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    color: $primary-text;
     text-align: center;
     padding: 1rem;
   }
@@ -43,4 +45,48 @@ li {
 
 }
 
+//footer 
+.footer {
+  background-color: $primary-background;
+  color: $primary-text;
+  padding: 1rem;
+}
 
+.socials {
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1rem 0;
+  }
+
+  &__icon:nth-child(n+1) {
+    padding-left: 1.8rem;
+  }
+}
+
+.details {
+  font-size: 0.8125rem;
+  height: 100%;
+
+  &__name {
+    font-weight: 600;
+    padding: 1rem 0;
+  }
+
+  &__email {
+    padding-top: 1rem;
+  }
+}
+
+.copyright {
+
+  &__logo {
+    padding-top: 4rem;
+  }
+
+  &__text {
+    font-size: 0.8125rem;
+    padding-top: 1rem;
+  }
+}
