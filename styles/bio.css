@@ -82,15 +82,15 @@ html {
   top: 43%;
 }
 
-.about {
+.about, .gallery {
   padding: 1rem 1rem;
 }
-.about__title {
+.about__title, .gallery__title {
   font-size: 1.5rem;
   font-weight: 600;
   padding-bottom: 0.6rem;
 }
-.about__image {
+.about__image, .gallery__image {
   width: 100%;
 }
 .about__quote, .about__quote-author {
@@ -113,4 +113,11 @@ html {
   font-weight: 400;
   line-height: 1.125rem;
   margin-top: 0.6rem;
+}
+
+.gallery {
+  background-color: #fafafa;
+}
+.gallery__image {
+  padding-bottom: 0.6rem;
 }/*# sourceMappingURL=bio.css.map */

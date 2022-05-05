@@ -60,3 +60,18 @@
     margin-top: 0.6rem;
   }
 }
+
+//gallery
+.gallery {
+  @extend .about;
+  background-color: $alternative-background;
+
+  &__title {
+    @extend .about__title;
+  }
+
+  &__image {
+    @extend .about__image;
+    padding-bottom: 0.6rem;
+  }
+}
