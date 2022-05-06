@@ -12,6 +12,7 @@ li {
 
 .logo {
   @include page-header-mobile-font;
+  font-weight: 400;
   text-transform: uppercase;
   color: $primary-text;
 }
@@ -23,7 +24,12 @@ li {
     @include tablet {
       display: flex;
       align-items: flex-end;
-  }
+      padding-left: 1rem;
+    }
+
+    @include desktop {
+      padding: 0 8rem;
+    }
 
   &__logo {
     text-align: center;
@@ -68,6 +74,10 @@ li {
     padding: 2rem 2rem
   }
 
+  @include desktop {
+    padding: 4rem 8rem;
+  }
+
   &__logo {
     padding-top: 4rem;
 
@@ -95,10 +105,17 @@ li {
 
     @include tablet {
       @include section-header-desktop-font;
+      font-size: 2rem;
+    }
+
+    @include desktop {
+      @include section-header-desktop-font;
     }
   }
 
   &__icons {
+
+    padding-top: 1rem;
 
     @include tablet {
       display: flex;
@@ -116,12 +133,8 @@ li {
     }
   }
 
-  &__icon:nth-child(n+1) {
-    padding-left: 1.8rem;
-
-    @include tablet {
-      padding-left: 0;
-    }
+  &__icon:not(:first-child) {
+    padding-left: 2rem;
   }
 }
 
@@ -137,27 +150,56 @@ li {
     margin-top: 1.5rem;
   }
 
+  @include desktop {
+    @include footer-copy-desktop-font;
+    justify-content: flex-start;
+  }
+
+  &__card:not(:first-child) {
+    
+    @include desktop {
+      padding-left: 3rem;
+    }
+  }
+
   &__name {
     font-weight: 600;
     padding: 1rem 0;
+
+    @include tablet {
+      padding-bottom: 1.5rem;
+    }
   }
 
   &__email {
     padding-top: 1rem;
+
+    @include tablet {
+      padding-top: 1.5rem;
+    }
   }
 }
 
 .copyright {
+  margin-top: 1rem;
 
   @include tablet {
     order: 4;
-    margin-top: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  @include desktop {
+    margin-top: 3rem;
   }
 
   &__text {
-    @include footer-copy-mobile-font;
+    font-size: 0.6875rem;
 
     @include tablet {
+      @include footer-copy-desktop-font;
+    }
+
+    @include desktop {
       @include footer-copy-desktop-font;
     }
   }

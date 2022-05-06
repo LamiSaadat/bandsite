@@ -16,7 +16,7 @@
   &__text {
     @include page-header-mobile-font;
     color: $primary-text;
-    padding-left: 16px;
+    padding-left: 1rem;
     position: absolute;
     top: 43%;
 
@@ -25,16 +25,29 @@
         top: 50%;
         left: 3%;
       }
+
+      @include desktop {
+        @include page-header-desktop-font;
+        padding-left: 6rem;
+      }
   }
 }
 
 .about {
   padding: 1rem 1rem;
 
+  @include desktop {
+    padding: 4rem 8rem;
+  }
+
   &__content {
 
     @include tablet {
       padding: 1rem 4rem;
+    }
+
+    @include desktop {
+      padding: 1rem 6rem;
     }
   }
 
@@ -45,6 +58,10 @@
     @include tablet {
       @include section-header-desktop-font;
       margin-left: 1rem;
+    }
+
+    @include tablet {
+      @include section-header-desktop-font;
     }
   }
 
@@ -74,9 +91,13 @@
   &__band-name {
     @include subheader-mobile-font;
     color: $primary-background;
-    margin-top: 0.8rem;
+    margin-top: 1.5rem;
 
     @include tablet {
+      @include subheader-desktop-font;
+    }
+
+    @include desktop {
       @include subheader-desktop-font;
     }
   }
@@ -97,10 +118,18 @@
       @include body-copy-desktop-font;
     }
 
+    @include desktop {
+      @include body-copy-desktop-font;
+    }
+
     &--right {
 
       @include tablet {
         margin-left: 2.5rem;
+      }
+
+      @include desktop {
+        margin-left: 3rem;
       }
     }
   }
@@ -108,11 +137,15 @@
 
 //gallery
 .gallery {
-  @extend .about;
+  padding: 1rem 1rem 0 1rem;
   background-color: $alternative-background;
 
   @include tablet {
     padding: 2rem 2rem;
+  }
+
+  @include desktop {
+    padding: 4rem 8rem;
   }
 
   &__title {
@@ -140,6 +173,11 @@
       height: 8rem;
       width: 14rem;
       padding-bottom: 1rem;
+    }
+
+    @include desktop {
+      height: 11rem;
+      width: 20rem;
     }
   }
 }
