@@ -1,4 +1,6 @@
 @use './colors' as *;
+@use './mixins' as *;
+@use './typography' as *;
 
 a {
   text-decoration: none;
@@ -9,8 +11,7 @@ li {
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: 400;
+  @include page-header-mobile-font;
   text-transform: uppercase;
   color: $primary-text;
 }
@@ -18,6 +19,11 @@ li {
 //nav bar
 .header {
   background-color: $primary-background;
+
+    @include tablet {
+      display: flex;
+      align-items: flex-end;
+  }
 
   &__logo {
     text-align: center;
@@ -33,6 +39,10 @@ li {
     padding-bottom: 1rem;
     width: 100%;
     text-align: center;
+
+    @include tablet {
+      margin-left: 3rem;
+    }
     
     &--active {
       border-bottom: 0.25rem solid $primary-text;
@@ -50,24 +60,82 @@ li {
   background-color: $primary-background;
   color: $primary-text;
   padding: 1rem;
+
+  @include tablet {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2rem 2rem
+  }
+
+  &__logo {
+    padding-top: 4rem;
+
+    @include tablet {
+      order: 2;
+      width: 50%;
+      padding-top: 0;
+      text-align: right;
+    }
+  }
 }
 
 .socials {
 
+  @include tablet {
+    display: flex;
+    order: 1;
+    width: 50%;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
   &__title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    padding: 1rem 0;
+    @include section-header-mobile-font;
+
+    @include tablet {
+      @include section-header-desktop-font;
+    }
+  }
+
+  &__icons {
+
+    @include tablet {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 41%;
+    }
+  }
+
+  &__icon {
+
+    @include tablet {
+      width: 1.3rem;
+      height: 1.3rem;
+    }
   }
 
   &__icon:nth-child(n+1) {
     padding-left: 1.8rem;
+
+    @include tablet {
+      padding-left: 0;
+    }
   }
 }
 
 .details {
-  font-size: 0.8125rem;
-  height: 100%;
+  @include body-copy-mobile-font;
+
+  @include tablet {
+    @include body-copy-desktop-font;
+    display: flex;
+    order: 3;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1.5rem;
+  }
 
   &__name {
     font-weight: 600;
@@ -81,12 +149,16 @@ li {
 
 .copyright {
 
-  &__logo {
-    padding-top: 4rem;
+  @include tablet {
+    order: 4;
+    margin-top: 1.5rem;
   }
 
   &__text {
-    font-size: 0.8125rem;
-    padding-top: 1rem;
+    @include footer-copy-mobile-font;
+
+    @include tablet {
+      @include footer-copy-desktop-font;
+    }
   }
 }

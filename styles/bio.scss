@@ -8,24 +8,44 @@
   height: 13rem;
   width: 100vw;
   position: relative;
+
+    @include tablet {
+      height: 31rem;
+    }
     
   &__text {
-    font-size: 1.6rem;
+    @include page-header-mobile-font;
     color: $primary-text;
-    font-weight: 600;
-    padding-left: 1rem;
+    padding-left: 16px;
     position: absolute;
     top: 43%;
+
+      @include tablet {
+        @include page-header-desktop-font;
+        top: 50%;
+        left: 3%;
+      }
   }
 }
 
 .about {
   padding: 1rem 1rem;
 
+  &__content {
+
+    @include tablet {
+      padding: 1rem 4rem;
+    }
+  }
+
   &__title {
-    font-size: 1.5rem;
-    font-weight: 600;
+    @include section-header-mobile-font;
     padding-bottom: 0.6rem;
+
+    @include tablet {
+      @include section-header-desktop-font;
+      margin-left: 1rem;
+    }
   }
 
   &__image {
@@ -33,31 +53,56 @@
   }
 
   &__quote {
-    font-size: 0.875rem;
-    font-weight: 700;
+    @include subheader-mobile-font;
     color: $primary-background;
-    line-height: 1.375rem;
     margin-top: 0.6rem;
+
+    @include tablet {
+      @include subheader-desktop-font;
+      letter-spacing: 0.036rem;
+    }
   }
 
   &__quote-author {
     @extend .about__quote;
+
+    @include tablet {
+      font-size: 1.125rem;
+    }
   }
 
   &__band-name {
-    font-size: 0.875rem;
+    @include subheader-mobile-font;
     color: $primary-background;
-    font-weight: 600;
-    line-height: 2rem;
     margin-top: 0.8rem;
+
+    @include tablet {
+      @include subheader-desktop-font;
+    }
+  }
+
+  &__info-container {
+
+    @include tablet {
+      display: flex;
+    }
   }
 
   &__info {
-    font-size: 0.8125rem;
+    @include body-copy-mobile-font;
     color: $primary-background;
-    font-weight: 400;
-    line-height: 1.125rem;
     margin-top: 0.6rem;
+
+    @include tablet {
+      @include body-copy-desktop-font;
+    }
+
+    &--right {
+
+      @include tablet {
+        margin-left: 2.5rem;
+      }
+    }
   }
 }
 
@@ -66,12 +111,35 @@
   @extend .about;
   background-color: $alternative-background;
 
+  @include tablet {
+    padding: 2rem 2rem;
+  }
+
   &__title {
     @extend .about__title;
+
+    @include tablet {
+      margin-left: 0;
+    }
+  }
+
+  &__images {
+
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
   }
 
   &__image {
     @extend .about__image;
     padding-bottom: 0.6rem;
+
+    @include tablet {
+      height: 8rem;
+      width: 14rem;
+      padding-bottom: 1rem;
+    }
   }
 }
