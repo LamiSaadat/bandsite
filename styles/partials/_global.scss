@@ -1,6 +1,6 @@
-@use './colors' as *;
-@use './mixins' as *;
-@use './typography' as *;
+@use "./variables" as *;
+@use "./mixins" as *;
+@use "./typography" as *;
 
 a {
   text-decoration: none;
@@ -21,15 +21,15 @@ li {
 .header {
   background-color: $primary-background;
 
-    @include tablet {
-      display: flex;
-      align-items: flex-end;
-      padding-left: 1rem;
-    }
+  @include tablet {
+    display: flex;
+    align-items: flex-end;
+    padding-left: 1rem;
+  }
 
-    @include desktop {
-      padding: 0 8rem;
-    }
+  @include desktop {
+    padding: 0 8rem;
+  }
 
   &__logo {
     text-align: center;
@@ -49,7 +49,7 @@ li {
     @include tablet {
       margin-left: 3rem;
     }
-    
+
     &--active {
       border-bottom: 0.25rem solid $primary-text;
     }
@@ -58,20 +58,19 @@ li {
   &__item {
     color: $primary-text;
   }
-
 }
 
-//footer 
+//footer
 .footer {
   background-color: $primary-background;
   color: $primary-text;
-  padding: 1rem;
+  padding: 2rem 1rem 1rem 1rem;
 
   @include tablet {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    padding: 2rem 2rem
+    padding: 2rem 2rem;
   }
 
   @include desktop {
@@ -91,13 +90,16 @@ li {
 }
 
 .socials {
-
   @include tablet {
     display: flex;
     order: 1;
     width: 50%;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
+  }
+
+  @include desktop {
+    justify-content: flex-start;
   }
 
   &__title {
@@ -107,26 +109,26 @@ li {
       @include section-header-desktop-font;
       font-size: 2rem;
     }
-
-    @include desktop {
-      @include section-header-desktop-font;
-    }
   }
 
   &__icons {
-
     padding-top: 1rem;
 
     @include tablet {
+      padding-top: 0;
       display: flex;
       align-items: center;
       justify-content: space-evenly;
       width: 41%;
     }
+
+    @include desktop {
+      padding-top: 0;
+      margin-left: 1.3rem;
+    }
   }
 
   &__icon {
-
     @include tablet {
       width: 1.3rem;
       height: 1.3rem;
@@ -135,6 +137,14 @@ li {
 
   &__icon:not(:first-child) {
     padding-left: 2rem;
+
+    @include tablet {
+      padding-left: 0;
+    }
+
+    @include desktop {
+      padding-left: 0;
+    }
   }
 }
 
@@ -146,7 +156,7 @@ li {
     display: flex;
     order: 3;
     justify-content: space-between;
-    width: 100%;
+    width: 94%;
     margin-top: 1.5rem;
   }
 
@@ -156,7 +166,6 @@ li {
   }
 
   &__card:not(:first-child) {
-    
     @include desktop {
       padding-left: 3rem;
     }
@@ -197,10 +206,12 @@ li {
 
     @include tablet {
       @include footer-copy-desktop-font;
+      font-size: 0.8rem;
     }
 
     @include desktop {
       @include footer-copy-desktop-font;
+      font-size: 0.8rem;
     }
   }
 }

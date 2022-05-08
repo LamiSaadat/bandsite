@@ -1,11 +1,74 @@
+@use "./typography" as *;
+@use "./variables" as *;
+
 @mixin tablet {
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet-width) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: $desktop-width) {
     @content;
   }
+}
+
+@mixin page-header-desktop-font {
+  font-size: 3.75rem;
+  line-height: 4.25rem;
+  font-weight: 600;
+}
+
+@mixin section-header-desktop-font {
+  font-size: 2.25rem;
+  line-height: 2.75rem;
+  font-weight: 600;
+}
+
+@mixin subheader-desktop-font {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+@mixin body-copy-desktop-font {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 400;
+}
+
+@mixin footer-copy-desktop-font {
+  font-style: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+}
+
+@mixin page-header-mobile-font {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+@mixin section-header-mobile-font {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+@mixin subheader-mobile-font {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+
+@mixin body-copy-mobile-font {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+
+@mixin footer-copy-mobile-font {
+  font-style: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
 }

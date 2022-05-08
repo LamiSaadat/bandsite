@@ -1,18 +1,27 @@
-@use './partials/index' as *;
+@use "./partials/index" as *;
 
+//hero container
 .hero {
-  background-image: linear-gradient(to right bottom, rgba($color: $primary-background, $alpha: 0.5), rgba($color: $primary-background, $alpha: 0.5)), url(../assets/Images/hero-bio.jpg);
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color: $primary-background, $alpha: 0.5),
+      rgba($color: $primary-background, $alpha: 0.5)
+    ),
+    url(../assets/Images/hero-bio.jpg);
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
+  background-size: cover;
   height: 13rem;
-  width: 100vw;
+  width: 100%;
   position: relative;
 
-    @include tablet {
-      height: 31rem;
-    }
-    
+  @include tablet {
+    height: 31rem;
+  }
+
+  @include desktop {
+    height: 42rem;
+  }
+
   &__text {
     @include page-header-mobile-font;
     color: $primary-text;
@@ -20,28 +29,27 @@
     position: absolute;
     top: 43%;
 
-      @include tablet {
-        @include page-header-desktop-font;
-        top: 50%;
-        left: 3%;
-      }
+    @include tablet {
+      @include page-header-desktop-font;
+      top: 50%;
+      left: 3%;
+    }
 
-      @include desktop {
-        @include page-header-desktop-font;
-        padding-left: 6rem;
-      }
+    @include desktop {
+      padding-left: 6rem;
+    }
   }
 }
 
+//about section
 .about {
   padding: 1rem 1rem;
 
   @include desktop {
-    padding: 4rem 8rem;
+    padding: 4rem 8rem 2rem 8rem;
   }
 
   &__content {
-
     @include tablet {
       padding: 1rem 4rem;
     }
@@ -76,7 +84,13 @@
 
     @include tablet {
       @include subheader-desktop-font;
+      font-size: 1.381rem;
       letter-spacing: 0.036rem;
+    }
+
+    @include desktop {
+      max-width: 80%;
+      font-size: 1.3rem;
     }
   }
 
@@ -85,6 +99,10 @@
 
     @include tablet {
       font-size: 1.125rem;
+    }
+
+    @include desktop {
+      font-size: 1rem;
     }
   }
 
@@ -98,12 +116,11 @@
     }
 
     @include desktop {
-      @include subheader-desktop-font;
+      margin-top: 3rem;
     }
   }
 
   &__info-container {
-
     @include tablet {
       display: flex;
     }
@@ -111,19 +128,20 @@
 
   &__info {
     @include body-copy-mobile-font;
+    font-size: 0.8rem;
     color: $primary-background;
     margin-top: 0.6rem;
 
     @include tablet {
       @include body-copy-desktop-font;
+      margin-top: 2.5rem;
     }
 
     @include desktop {
-      @include body-copy-desktop-font;
+      margin-top: 1rem;
     }
 
     &--right {
-
       @include tablet {
         margin-left: 2.5rem;
       }
@@ -141,11 +159,11 @@
   background-color: $alternative-background;
 
   @include tablet {
-    padding: 2rem 2rem;
+    padding: 3rem 2rem 2rem 2rem;
   }
 
   @include desktop {
-    padding: 4rem 8rem;
+    padding: 3rem 8rem 2rem 8rem;
   }
 
   &__title {
@@ -157,11 +175,11 @@
   }
 
   &__images {
-
     @include tablet {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+      margin-top: 1rem;
     }
   }
 
@@ -170,14 +188,8 @@
     padding-bottom: 0.6rem;
 
     @include tablet {
-      height: 8rem;
-      width: 14rem;
-      padding-bottom: 1rem;
-    }
-
-    @include desktop {
-      height: 11rem;
-      width: 20rem;
+      max-width: 32%;
+      margin-bottom: 0.8rem;
     }
   }
 }

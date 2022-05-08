@@ -1,89 +1,36 @@
 @font-face {
-  font-family: 'AvenirNext LT Pro';
-  src: url('../../assets/Font/Avenir-WOFF/AvenirNextLTPro-Regular.woff') format('woff'),
-      url('../../assets/Font/Avenir-WOFF/AvenirNextLTPro-Regular.woff2') format('woff2'),
-      url('../../assets/Font/Avenir-TTF/AvenirNextLTPro.ttf') format('ttf'),
-      url('../../assets/Font/Avenir-OTF/AvenirNextLTPro-Regular.otf') format('otf');
+  font-family: "AvenirNext LT Pro";
+  src: url("../../assets/Font/Avenir-WOFF/AvenirNextLTPro-Regular.woff")
+      format("woff"),
+    url("../../assets/Font/Avenir-WOFF/AvenirNextLTPro-Regular.woff2")
+      format("woff2"),
+    url("../../assets/Font/Avenir-TTF/AvenirNextLTPro.ttf") format("ttf"),
+    url("../../assets/Font/Avenir-OTF/AvenirNextLTPro-Regular.otf")
+      format("otf");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'AvenirNext LT Pro';
-  src: url('../../assets/Font/Avenir-WOFF/AvenirNextLTPro-Demi.woff') format('woff'),
-      url('../../assets/Font/Avenir-WOFF/AvenirNextLTPro-Demi.woff2') format('woff2'),
-      url('../../assets/Font/Avenir-TTF/AvenirNextLTProDemi.ttf') format('ttf'),
-      url('../../assets/Font/Avenir-OTF/AvenirNextLTPro-Demi.otf') format('otf');
+  font-family: "AvenirNext LT Pro";
+  src: url("../../assets/Font/Avenir-WOFF/AvenirNextLTPro-Demi.woff")
+      format("woff"),
+    url("../../assets/Font/Avenir-WOFF/AvenirNextLTPro-Demi.woff2")
+      format("woff2"),
+    url("../../assets/Font/Avenir-TTF/AvenirNextLTProDemi.ttf") format("ttf"),
+    url("../../assets/Font/Avenir-OTF/AvenirNextLTPro-Demi.otf") format("otf");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'AvenirNext LT Pro';
-  src: url('../../assets/Font/Avenir-WOFF/AvenirNextLTPro-Bold.woff') format('woff'),
-  url('../../assets/Font/Avenir-WOFF/AvenirNextLTPro-Bold.woff2') format('woff2'),
-  url('../../assets/Font/Avenir-TTF/AvenirNextLTProBold.ttf') format('ttf'),
-  url('../../assets/Font/Avenir-OTF/AvenirNextLTPro-Bold.otf') format('otf');
+  font-family: "AvenirNext LT Pro";
+  src: url("../../assets/Font/Avenir-WOFF/AvenirNextLTPro-Bold.woff")
+      format("woff"),
+    url("../../assets/Font/Avenir-WOFF/AvenirNextLTPro-Bold.woff2")
+      format("woff2"),
+    url("../../assets/Font/Avenir-TTF/AvenirNextLTProBold.ttf") format("ttf"),
+    url("../../assets/Font/Avenir-OTF/AvenirNextLTPro-Bold.otf") format("otf");
   font-weight: 700;
   font-style: normal;
-}
-
-@mixin page-header-desktop-font {
-  font-size: 3.75rem;
-  line-height: 4.25rem;
-  font-weight: 600;
-}
-
-@mixin section-header-desktop-font {
-  font-size: 2.25rem;
-  line-height: 2.75rem;
-  font-weight: 600;
-}
-
-@mixin subheader-desktop-font {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 600;
-}
-
-@mixin body-copy-desktop-font {
-  font-size: 0.875rem;
-  line-height: 1.375rem;
-  font-weight: 400;
-}
-
-@mixin footer-copy-desktop-font {
-  font-style: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 400;
-}
-
-@mixin page-header-mobile-font {
- font-size: 1.5rem;
-  line-height: 2rem; 
-  font-weight: 600;
-}
-
-@mixin section-header-mobile-font {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 600;
-}
-
-@mixin subheader-mobile-font {
-  font-size: 0.875rem;
-  line-height: 1.375rem;
-  font-weight: 600;
-}
-
-@mixin body-copy-mobile-font {
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
-  font-weight: 400;
-}
-
-@mixin footer-copy-mobile-font {
-  font-style: 0.8125rem;
-  line-height: 1.125rem;
-  font-weight: 400;
 }
