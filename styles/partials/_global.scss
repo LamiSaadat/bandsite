@@ -10,11 +10,33 @@ li {
   list-style: none;
 }
 
+button {
+  font-family: "AvenirNext LT Pro";
+  font-weight: 400;
+  background-color: $primary-background;
+  color: $primary-text;
+  width: 100%;
+  border: none;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  padding: 0.6rem;
+  border-radius: 0.3125rem;
+}
+
 .logo {
   @include page-header-mobile-font;
   font-weight: 400;
   text-transform: uppercase;
   color: $primary-text;
+}
+
+.label {
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #afafaf;
 }
 
 //nav bar

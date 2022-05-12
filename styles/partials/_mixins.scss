@@ -43,6 +43,12 @@
   font-weight: 400;
 }
 
+@mixin labels-button-desktop-font {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+
 @mixin page-header-mobile-font {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -71,4 +77,10 @@
   font-style: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
+}
+
+@mixin labels-buttons-mobile-font {
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 700;
 }
