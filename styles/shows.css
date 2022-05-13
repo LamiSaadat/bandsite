@@ -289,6 +289,7 @@ html {
   background-image: linear-gradient(to right bottom, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/Images/hero-shows.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center center;
   height: 16rem;
   width: 100%;
   position: relative;
@@ -303,9 +304,6 @@ html {
   .hero {
     height: 42rem;
   }
-}
-.hero__text-section {
-  width: 50%;
 }
 .hero__album {
   font-size: 1.5rem;
@@ -323,6 +321,7 @@ html {
     font-size: 3.75rem;
     line-height: 4.25rem;
     font-weight: 600;
+    font-size: 1.5rem;
     top: 0;
   }
 }
@@ -342,7 +341,8 @@ html {
     font-size: 3.75rem;
     line-height: 4.25rem;
     font-weight: 600;
-    top: 0;
+    font-size: 2.5rem;
+    top: 50%;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -359,21 +359,27 @@ html {
   padding-left: 1rem;
   border-radius: 5px;
 }
-.shows {
-  padding: 1rem 1rem;
+@media screen and (min-width: 786px) {
+  .hero__song {
+    width: 50%;
+    padding-left: 4rem;
+  }
 }
+
 .shows__title {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 600;
-  padding-bottom: 0.6rem;
+  padding: 1rem 1rem 0.6rem 1rem;
 }
 
+.show-card {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid #afafaf;
+}
 .show-card__titles {
   display: none;
-}
-.show-card__component {
-  margin-bottom: 0.8rem;
 }
 .show-card__label {
   font-size: 0.625rem;
@@ -382,12 +388,14 @@ html {
   font-weight: 600;
   text-transform: uppercase;
   color: #afafaf;
+  margin-bottom: 0.3rem;
 }
 .show-card__info {
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
   font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 .show-card__button {
   margin-top: 0.2rem;
