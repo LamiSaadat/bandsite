@@ -51,3 +51,48 @@ defaultComments.forEach((comment) => {
   commentInfoEl.appendChild(commentDateEl);
   commentInfoEl.appendChild(commentTextEl);
 });
+
+const form = document.querySelector(".form-container__form");
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const name = event.target.name.value;
+  const comment = event.target.comment.value;
+
+  //create comment card div with style
+  const commentCardEl = document.createElement("div");
+  commentCardEl.classList.add("comment-card");
+  //create comment card image div with style
+  const commentImageEl = document.createElement("div");
+  commentImageEl.classList.add("comment-card__image");
+  //create info div with style
+  const commentInfoEl = document.createElement("div");
+  commentInfoEl.classList.add("comment-card__info");
+  //create name p with style
+  const commentNameEl = document.createElement("p");
+  commentNameEl.classList.add("comment-card__name");
+  commentNameEl.innerText = name;
+  //create date p with style
+  const commentDateEl = document.createElement("p");
+  commentDateEl.classList.add("comment-name__date");
+  commentDateEl.innerText = Date.now();
+  //create text p with style
+  const commentTextEl = document.createElement("p");
+  commentTextEl.classList.add("comment-card__text");
+  commentTextEl.innerText = comment;
+
+  //append to parent
+  commentCards.appendChild(commentCardEl);
+  commentCardEl.appendChild(commentImageEl);
+  commentCardEl.appendChild(commentInfoEl);
+  commentInfoEl.appendChild(commentNameEl);
+  commentInfoEl.appendChild(commentDateEl);
+  commentInfoEl.appendChild(commentTextEl);
+
+  // defaultComments.unshift({ name: name, comment: comment });
+});
+
+// function displayComment() {
+
+// }
