@@ -345,14 +345,14 @@ html {
     padding: 1rem 6rem;
   }
 }
-.about__title, .comments__title, .gallery__title {
+.about__title, .comments-wrapper__title, .gallery__title {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 600;
   padding-bottom: 0.6rem;
 }
 @media screen and (min-width: 786px) {
-  .about__title, .comments__title, .gallery__title {
+  .about__title, .comments-wrapper__title, .gallery__title {
     font-size: 2.25rem;
     line-height: 2.75rem;
     font-weight: 600;
@@ -360,7 +360,7 @@ html {
   }
 }
 @media screen and (min-width: 786px) {
-  .about__title, .comments__title, .gallery__title {
+  .about__title, .comments-wrapper__title, .gallery__title {
     font-size: 2.25rem;
     line-height: 2.75rem;
     font-weight: 600;
@@ -494,22 +494,62 @@ html {
   }
 }
 
-.comments {
+.comments-wrapper {
   padding: 1rem;
+  margin: 0 auto;
+  max-width: 1280px;
 }
+@media screen and (min-width: 786px) {
+  .comments-wrapper {
+    padding: 3rem 2rem 2rem 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .comments-wrapper {
+    padding: 3rem 0 2rem 0;
+  }
+}
+@media screen and (min-width: 786px) {
+  .comments-wrapper__title {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 600;
+    margin-left: 0;
+  }
+}
+
 .form-container {
   display: flex;
   justify-content: space-evenly;
   padding-bottom: 1rem;
+  max-width: 786px;
+}
+@media screen and (min-width: 786px) {
+  .form-container {
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-evenly;
+  }
+}
+.form-container__image-div {
+  padding-top: 1rem;
 }
 .form-container__image {
   border-radius: 50%;
   height: 2rem;
   width: 2rem;
 }
+@media screen and (min-width: 786px) {
+  .form-container__image {
+    height: 3rem;
+    width: 3rem;
+  }
+}
 .form-container__form {
   display: flex;
   flex-direction: column;
+  width: 85%;
+  padding-left: 0.5rem;
 }
 .form-container__name, .form-container__comment {
   display: flex;
@@ -517,18 +557,23 @@ html {
   margin-bottom: 1rem;
 }
 .form-container__name-input {
-  width: 15rem;
-  height: 1.8rem;
+  height: 3rem;
   background-color: #fafafa;
   border: 1px solid #afafaf;
   border-radius: 3px;
 }
 .form-container__comment-input {
-  width: 15rem;
   height: 6rem;
   background-color: #fafafa;
   border: 1px solid #afafaf;
   border-radius: 3px;
+  resize: none;
+}
+@media screen and (min-width: 786px) {
+  .form-container__button {
+    width: 10rem;
+    margin-left: auto;
+  }
 }
 
 ::-moz-placeholder {
@@ -560,7 +605,15 @@ html {
 
 .comment-card {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  padding: 1rem 0 1rem 0;
+  max-width: 786px;
+}
+@media screen and (min-width: 786px) {
+  .comment-card {
+    width: 80%;
+    margin: 0 auto;
+  }
 }
 .comment-card__image {
   border-radius: 50%;
@@ -568,16 +621,30 @@ html {
   width: 2rem;
   background-color: #afafaf;
 }
-.comment-card__info {
+@media screen and (min-width: 786px) {
+  .comment-card__image {
+    height: 3rem;
+    width: 3rem;
+  }
+}
+.comment-card__output {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   width: 85%;
+  padding-left: 1rem;
+}
+.comment-card__info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 .comment-card__name {
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 600;
+  width: 50%;
+  overflow: hidden;
 }
 .comment-card__date {
   font-size: 0.8125rem;
@@ -590,4 +657,9 @@ html {
   line-height: 1.125rem;
   font-weight: 400;
   margin-top: 0.5rem;
+}
+
+.form-container,
+.comment-card {
+  border-bottom: 1px solid #e1e1e1;
 }/*# sourceMappingURL=bio.css.map */

@@ -30,6 +30,9 @@ function renderComments() {
     //create comment card image div with style
     const commentImageEl = document.createElement("div");
     commentImageEl.classList.add("comment-card__image");
+    //create output div with style
+    const commentOutputEl = document.createElement("div");
+    commentOutputEl.classList.add("comment-card__output");
     //create info div with style
     const commentInfoEl = document.createElement("div");
     commentInfoEl.classList.add("comment-card__info");
@@ -39,8 +42,11 @@ function renderComments() {
     commentNameEl.innerText = comment.name;
     //create date p with style
     const commentDateEl = document.createElement("p");
-    commentDateEl.classList.add("comment-name__date");
+    commentDateEl.classList.add("comment-card__date");
     commentDateEl.innerText = comment.date;
+    //create comment holder with style
+    const commentHolderEl = document.createElement("div");
+    commentHolderEl.classList.add("comment-card__comment");
     //create text p with style
     const commentTextEl = document.createElement("p");
     commentTextEl.classList.add("comment-card__text");
@@ -49,10 +55,14 @@ function renderComments() {
     //append to parent
     commentCards.appendChild(commentCardEl);
     commentCardEl.appendChild(commentImageEl);
-    commentCardEl.appendChild(commentInfoEl);
+    commentCardEl.appendChild(commentOutputEl);
+
+    commentOutputEl.appendChild(commentInfoEl);
+    commentOutputEl.appendChild(commentHolderEl);
+
     commentInfoEl.appendChild(commentNameEl);
     commentInfoEl.appendChild(commentDateEl);
-    commentInfoEl.appendChild(commentTextEl);
+    commentHolderEl.appendChild(commentTextEl);
   });
 }
 
@@ -80,7 +90,7 @@ form.addEventListener("submit", (event) => {
   event.target.reset();
 
   //render comment to page
-  renderComments();
+  // renderComments();
 });
 
 renderComments();

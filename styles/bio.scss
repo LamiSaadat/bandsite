@@ -195,28 +195,62 @@
 }
 
 //comment-section
-.comments {
+.comments-wrapper {
   padding: 1rem;
+  margin: 0 auto;
+  max-width: 1280px;
+
+  @include tablet {
+    padding: 3rem 2rem 2rem 2rem;
+  }
+
+  @include desktop {
+    padding: 3rem 0 2rem 0;
+  }
 
   &__title {
     @extend .about__title;
+
+    @include tablet {
+      @include section-header-desktop-font;
+      margin-left: 0;
+    }
   }
 }
+
 //form
 .form-container {
   display: flex;
   justify-content: space-evenly;
   padding-bottom: 1rem;
+  max-width: 786px;
+
+  @include tablet {
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-evenly;
+  }
+
+  &__image-div {
+    padding-top: 1rem;
+  }
 
   &__image {
     border-radius: 50%;
     height: 2rem;
     width: 2rem;
+
+    @include tablet {
+      height: 3rem;
+      width: 3rem;
+    }
   }
 
   &__form {
     display: flex;
     flex-direction: column;
+    width: 85%;
+    padding-left: 0.5rem;
   }
 
   &__name,
@@ -227,19 +261,27 @@
   }
 
   &__name-input {
-    width: 15rem;
-    height: 1.8rem;
+    // width: 13rem;
+    height: 3rem;
     background-color: $alternative-background;
     border: 1px solid $secondary-text;
     border-radius: 3px;
   }
 
   &__comment-input {
-    width: 15rem;
+    // width: 13rem;
     height: 6rem;
     background-color: $alternative-background;
     border: 1px solid $secondary-text;
     border-radius: 3px;
+    resize: none;
+  }
+
+  &__button {
+    @include tablet {
+      width: 10rem;
+      margin-left: auto;
+    }
   }
 }
 
@@ -252,24 +294,45 @@
 
 .comment-card {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  padding: 1rem 0 1rem 0;
+  max-width: 786px;
+
+  @include tablet {
+    width: 80%;
+    margin: 0 auto;
+  }
 
   &__image {
     border-radius: 50%;
     height: 2rem;
     width: 2rem;
     background-color: $secondary-text;
+
+    @include tablet {
+      height: 3rem;
+      width: 3rem;
+    }
   }
 
-  &__info {
+  &__output {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     width: 85%;
+    padding-left: 1rem;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
 
   &__name {
     @include subheader-mobile-font;
+    width: 50%;
+    overflow: hidden;
   }
 
   &__date {
@@ -281,4 +344,9 @@
     @include body-copy-mobile-font;
     margin-top: 0.5rem;
   }
+}
+
+.form-container,
+.comment-card {
+  border-bottom: 1px solid $secondary-inactive;
 }
