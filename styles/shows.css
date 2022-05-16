@@ -35,6 +35,7 @@ button {
   text-transform: uppercase;
   padding: 0.6rem;
   border-radius: 0.3125rem;
+  cursor: pointer;
 }
 
 .logo {
@@ -460,11 +461,18 @@ html {
 
 .show-card {
   margin-bottom: 1rem;
-  padding: 0 1rem 1rem 1rem;
+  padding: 16px;
   border-bottom: 1px solid #e1e1e1;
 }
 .show-card > * {
   flex: 1;
+}
+.show-card--selected {
+  background-color: #e1e1e1;
+}
+.show-card:hover {
+  background-color: #fafafa;
+  cursor: pointer;
 }
 @media screen and (min-width: 786px) {
   .show-card {
@@ -472,7 +480,7 @@ html {
     justify-content: space-around;
     align-items: center;
     margin-bottom: 0;
-    padding: 1rem;
+    padding: 24px 18px;
   }
 }
 .show-card__label {

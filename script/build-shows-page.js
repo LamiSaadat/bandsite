@@ -74,3 +74,14 @@ shows.forEach((show) => {
   showCard.appendChild(cardInfoLocation);
   showCard.appendChild(cardBtn);
 });
+
+const allShowCards = document.querySelectorAll(".show-card");
+
+allShowCards.forEach((card) => {
+  card.addEventListener("click", (event) => {
+    allShowCards.forEach((card) => {
+      card.classList.remove("show-card--selected");
+    });
+    card.classList.add("show-card--selected");
+  });
+});

@@ -174,11 +174,20 @@
 }
 .show-card {
   margin-bottom: 1rem;
-  padding: 0 1rem 1rem 1rem;
+  padding: 16px;
   border-bottom: 1px solid $secondary-inactive;
 
   & > * {
     flex: 1;
+  }
+
+  &--selected {
+    background-color: $secondary-inactive;
+  }
+
+  &:hover {
+    background-color: $alternative-background;
+    cursor: pointer;
   }
 
   @include tablet {
@@ -186,7 +195,7 @@
     justify-content: space-around;
     align-items: center;
     margin-bottom: 0;
-    padding: 1rem;
+    padding: 24px 18px;
   }
 
   &__label {

@@ -258,18 +258,19 @@
   &__comment {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1rem;
+    margin-bottom: 4px;
   }
 
   &__name-input {
     // width: 13rem;
-    height: 2rem;
+    height: 36px;
     background-color: $alternative-background;
     border: 1px solid $secondary-text;
-    border-radius: 3px;
+    border-radius: 4px;
+    padding: 12px;
 
     @include tablet {
-      height: 3rem;
+      height: 48px;
     }
   }
 
@@ -278,8 +279,9 @@
     height: 6rem;
     background-color: $alternative-background;
     border: 1px solid $secondary-text;
-    border-radius: 3px;
+    border-radius: 4px;
     resize: none;
+    padding: 16px;
   }
 
   &__button {
