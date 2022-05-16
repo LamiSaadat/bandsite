@@ -45,12 +45,11 @@
 
   &__text-section {
     @include tablet {
-      padding-left: 2rem;
-      padding-top: 1rem;
+      padding: 1rem 0 0 2rem;
     }
+
     @include desktop {
       width: 100%;
-      // margin: auto auto;
       padding: 0;
     }
   }
@@ -61,8 +60,6 @@
     font-weight: 400;
     color: #fff;
     padding-left: 1rem;
-    // position: absolute;
-    // top: 9%;
 
     @include tablet {
       @include page-header-desktop-font;
@@ -79,16 +76,11 @@
     font-size: 1.4rem;
     color: $primary-text;
     padding: 0.5rem 0 0 1rem;
-    // padding-left: 1rem;
-    // padding-top: 1rem;
-    // position: absolute;
-    // top: 25%;
     width: 80%;
 
     @include tablet {
       @include page-header-desktop-font;
       font-size: 4rem;
-      // top: 50%;
     }
 
     @include desktop {
@@ -98,19 +90,15 @@
   }
 
   &__song {
-    // position: absolute;
-    // top: 55%;
     height: 85px;
     width: 94%;
     border: none;
-    // padding-left: 1rem;
-    border-radius: 5px;
-    // padding-top: 1rem;
+    border-radius: 0.3125rem;
     padding: 0.5rem 0 0 1rem;
 
     @include tablet {
       width: 60%;
-      height: 150px;
+      height: 9.375rem;
       margin-top: 2rem;
       padding-left: 3rem;
     }
@@ -123,7 +111,6 @@
 
 //shows
 .shows-container {
-  // padding: 1rem 1rem;
   max-width: 1280px;
   margin: 0 auto;
 
@@ -195,7 +182,7 @@
     justify-content: space-around;
     align-items: center;
     margin-bottom: 0;
-    padding: 24px 18px;
+    padding: 1.5rem 1.125rem;
   }
 
   &__label {

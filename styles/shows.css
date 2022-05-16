@@ -327,8 +327,7 @@ html {
 }
 @media screen and (min-width: 786px) {
   .hero__text-section {
-    padding-left: 2rem;
-    padding-top: 1rem;
+    padding: 1rem 0 0 2rem;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -386,13 +385,13 @@ html {
   height: 85px;
   width: 94%;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   padding: 0.5rem 0 0 1rem;
 }
 @media screen and (min-width: 786px) {
   .hero__song {
     width: 60%;
-    height: 150px;
+    height: 9.375rem;
     margin-top: 2rem;
     padding-left: 3rem;
   }
@@ -480,7 +479,7 @@ html {
     justify-content: space-around;
     align-items: center;
     margin-bottom: 0;
-    padding: 24px 18px;
+    padding: 1.5rem 1.125rem;
   }
 }
 .show-card__label {

@@ -258,16 +258,16 @@
   &__comment {
     display: flex;
     flex-direction: column;
-    margin-bottom: 4px;
+    margin-bottom: 0.25rem;
   }
 
   &__name-input {
-    // width: 13rem;
-    height: 36px;
+    height: 2.25rem;
     background-color: $alternative-background;
-    border: 1px solid $secondary-text;
-    border-radius: 4px;
-    padding: 12px;
+    border: 0.0625rem solid $secondary-text;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    margin-bottom: 0.25rem;
 
     @include tablet {
       height: 48px;
@@ -275,13 +275,13 @@
   }
 
   &__comment-input {
-    // width: 13rem;
     height: 6rem;
     background-color: $alternative-background;
-    border: 1px solid $secondary-text;
-    border-radius: 4px;
+    border: 0.0625rem solid $secondary-text;
+    border-radius: 0.25rem;
     resize: none;
-    padding: 16px;
+    padding: 1rem;
+    margin-bottom: 0.25rem;
   }
 
   &__button {
@@ -356,5 +356,5 @@
 
 .form-container,
 .comment-card {
-  border-bottom: 1px solid $secondary-inactive;
+  border-bottom: 0.0625rem solid $secondary-inactive;
 }
