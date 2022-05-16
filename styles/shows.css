@@ -420,6 +420,18 @@ html {
     padding: 2rem 1rem 2rem 3rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  .shows-container {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows-container__inner {
+    margin-top: 3rem;
+    width: 70%;
+  }
+}
 
 .tablet-labels {
   display: none;

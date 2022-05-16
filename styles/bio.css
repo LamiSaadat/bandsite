@@ -506,7 +506,7 @@ html {
 }
 @media screen and (min-width: 1280px) {
   .comments-wrapper {
-    padding: 3rem 0 2rem 0;
+    padding: 3rem 8rem 2rem 8rem;
   }
 }
 @media screen and (min-width: 786px) {
@@ -529,6 +529,7 @@ html {
     width: 80%;
     margin: 0 auto;
     justify-content: space-evenly;
+    padding: 1.5rem 0;
   }
 }
 .form-container__image-div {
@@ -557,10 +558,15 @@ html {
   margin-bottom: 1rem;
 }
 .form-container__name-input {
-  height: 3rem;
+  height: 2rem;
   background-color: #fafafa;
   border: 1px solid #afafaf;
   border-radius: 3px;
+}
+@media screen and (min-width: 786px) {
+  .form-container__name-input {
+    height: 3rem;
+  }
 }
 .form-container__comment-input {
   height: 6rem;
@@ -613,6 +619,7 @@ html {
   .comment-card {
     width: 80%;
     margin: 0 auto;
+    padding: 1.5rem 0;
   }
 }
 .comment-card__image {

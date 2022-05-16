@@ -205,7 +205,7 @@
   }
 
   @include desktop {
-    padding: 3rem 0 2rem 0;
+    padding: 3rem 8rem 2rem 8rem;
   }
 
   &__title {
@@ -229,6 +229,7 @@
     width: 80%;
     margin: 0 auto;
     justify-content: space-evenly;
+    padding: 1.5rem 0;
   }
 
   &__image-div {
@@ -262,10 +263,14 @@
 
   &__name-input {
     // width: 13rem;
-    height: 3rem;
+    height: 2rem;
     background-color: $alternative-background;
     border: 1px solid $secondary-text;
     border-radius: 3px;
+
+    @include tablet {
+      height: 3rem;
+    }
   }
 
   &__comment-input {
@@ -301,6 +306,7 @@
   @include tablet {
     width: 80%;
     margin: 0 auto;
+    padding: 1.5rem 0;
   }
 
   &__image {

@@ -136,6 +136,18 @@
       padding: 2rem 1rem 2rem 3rem;
     }
   }
+
+  @include desktop {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__inner {
+    @include desktop {
+      margin-top: 3rem;
+      width: 70%;
+    }
+  }
 }
 
 .tablet-labels {
