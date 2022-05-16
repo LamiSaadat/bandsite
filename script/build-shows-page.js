@@ -33,38 +33,41 @@ const shows = [
 
 const showCards = document.querySelector(".show-cards");
 
+//display all shows on page from list
 shows.forEach((show) => {
+  //create each card
   const showCard = document.createElement("div");
   showCard.classList.add("show-card");
-
+  //create date label with style
   const cardLabelDate = document.createElement("h3");
   cardLabelDate.classList.add("label", "show-card__label");
   cardLabelDate.innerText = "Date";
-
+  //create date info with style
   const cardInfoDate = document.createElement("p");
   cardInfoDate.classList.add("show-card__info");
   cardInfoDate.innerText = show.date;
-
+  //create venue label with style
   const cardLabelVenue = document.createElement("h3");
   cardLabelVenue.classList.add("label", "show-card__label");
   cardLabelVenue.innerText = "Venue";
-
+  //create venue info with style
   const cardInfoVenue = document.createElement("p");
   cardInfoVenue.classList.add("show-card__info");
   cardInfoVenue.innerText = show.venue;
-
+  //create location label with style
   const cardLabelLocation = document.createElement("h3");
   cardLabelLocation.classList.add("label", "show-card__label");
   cardLabelLocation.innerText = "Location";
-
+  //create location info with style
   const cardInfoLocation = document.createElement("p");
   cardInfoLocation.classList.add("show-card__info");
   cardInfoLocation.innerText = show.location;
-
+  //create button with style
   const cardBtn = document.createElement("button");
   cardBtn.classList.add("show-card__button");
   cardBtn.innerText = "Buy Tickets";
 
+  //append to parent
   showCards.appendChild(showCard);
   showCard.appendChild(cardLabelDate);
   showCard.appendChild(cardInfoDate);
@@ -77,6 +80,7 @@ shows.forEach((show) => {
 
 const allShowCards = document.querySelectorAll(".show-card");
 
+//add style to selected card and remove when another is selected
 allShowCards.forEach((card) => {
   card.addEventListener("click", (event) => {
     allShowCards.forEach((card) => {

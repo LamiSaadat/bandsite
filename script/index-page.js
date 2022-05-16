@@ -19,6 +19,7 @@ const commentsList = [
 
 const commentCards = document.querySelector(".comment-cards");
 
+//remove all comments and re add with new comments if added or removed
 function renderComments() {
   commentCards.innerHTML = "";
 
@@ -66,7 +67,7 @@ function renderComments() {
   });
 }
 
-//add new comment to coment lists and show comment on page
+//add new comment to comment lists and show comment on page
 function displayComment(newComment) {
   //add comment to top of comment list
   commentsList.unshift(newComment);
@@ -88,9 +89,6 @@ form.addEventListener("submit", (event) => {
 
   //remove input text when form submits
   event.target.reset();
-
-  //render comment to page
-  // renderComments();
 });
 
 renderComments();

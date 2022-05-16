@@ -460,8 +460,8 @@ html {
 
 .show-card {
   margin-bottom: 1rem;
-  padding: 16px;
-  border-bottom: 1px solid #e1e1e1;
+  padding: 1rem;
+  border-bottom: 0.0625rem solid #e1e1e1;
 }
 .show-card > * {
   flex: 1;

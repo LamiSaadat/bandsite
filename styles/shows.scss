@@ -161,8 +161,8 @@
 }
 .show-card {
   margin-bottom: 1rem;
-  padding: 16px;
-  border-bottom: 1px solid $secondary-inactive;
+  padding: 1rem;
+  border-bottom: 0.0625rem solid $secondary-inactive;
 
   & > * {
     flex: 1;
