@@ -1,4 +1,4 @@
-@use './typography' as *;
+@use "./typography" as *;
 
 *,
 *:before,
@@ -10,5 +10,5 @@
 
 html {
   box-sizing: border-box;
-  font-family: 'AvenirNext LT Pro';
+  font-family: "AvenirNext LT Pro", sans-serif;
 }

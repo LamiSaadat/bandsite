@@ -2,17 +2,18 @@
 
 //hero container
 .hero {
-  background-image: linear-gradient(
-      to right bottom,
-      rgba($color: $primary-background, $alpha: 0.5),
-      rgba($color: $primary-background, $alpha: 0.5)
-    ),
-    url(../assets/Images/hero-bio.jpg);
+  background-image: url(../assets/Images/hero-bio.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 13rem;
   width: 100%;
   position: relative;
+
+  &--overlay {
+    background-color: rgba($color: $primary-background, $alpha: 0.5);
+    height: 100%;
+    width: 100%;
+  }
 
   @include tablet {
     height: 31rem;
