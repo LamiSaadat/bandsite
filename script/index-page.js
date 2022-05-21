@@ -39,7 +39,7 @@ function renderComments(commentsArray) {
     //create date p with style
     const commentDateEl = document.createElement("p");
     commentDateEl.classList.add("comment-card__date");
-    commentDateEl.innerText = changeTimeFormat(new Date(comment.timestamp));
+    commentDateEl.innerText = changeTimeFormat(comment.timestamp);
     //create comment holder with style
     const commentHolderEl = document.createElement("div");
     commentHolderEl.classList.add("comment-card__comment");
@@ -106,7 +106,7 @@ function sortCommentsByDate(array) {
 
 //change the time format
 function changeTimeFormat(timestamp) {
-  return timestamp.toLocaleDateString();
+  return new Date(timestamp).toLocaleDateString();
 }
 // function createElementWithClass(elementName, className) {
 //   const element = document.createElement(elementName);

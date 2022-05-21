@@ -5,12 +5,12 @@
   background-image: url("../assets/Images/hero-shows.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
+  background-position: center; //change values to per cents at each breakpoint
   height: 15rem;
   width: 100%;
 
   &--overlay {
-    background-color: rgba($color: primary-background, $alpha: 0.5);
+    background-color: rgba($color: $primary-background, $alpha: 0.5);
     width: 100%;
     height: 100%;
   }
@@ -168,13 +168,13 @@
     flex: 1;
   }
 
-  &--selected {
-    background-color: $secondary-inactive;
-  }
-
-  &:hover {
+  &:not(.show-card--selected):hover {
     background-color: $alternative-background;
     cursor: pointer;
+  }
+
+  &--selected {
+    background-color: $secondary-inactive;
   }
 
   @include tablet {

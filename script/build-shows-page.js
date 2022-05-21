@@ -1,91 +1,137 @@
-const shows = [
-  {
-    date: "Mon Sept 06 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Tue Sept 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Oct 15 2021",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Nov 06 2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Wed Dec 15 2021",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
+const BASE_URL = "https://project-1-api.herokuapp.com";
+const API_KEY = "5333cfb9-2926-49c0-b3e4-a759a4970ff9";
+const apiKeyString = `?api_key=${API_KEY}`;
+const getShowsEndpoint = `${BASE_URL}/showdates${apiKeyString}`;
+let showsArray;
 
-const showCards = document.querySelector(".show-cards");
+function getShows() {
+  axios.get(getShowsEndpoint).then((response) => {
+    showsArray = response.data;
+
+    renderShows(showsArray);
+
+    // add style to selected card and remove when another is selected
+    const allShowCards = document.querySelectorAll(".show-card");
+    allShowCards.forEach((card) => {
+      card.addEventListener("click", (event) => {
+        allShowCards.forEach((card) => {
+          card.classList.remove("show-card--selected");
+        });
+        card.classList.add("show-card--selected");
+      });
+    });
+  });
+}
+
+getShows();
+
+const main = document.querySelector("main");
+
+const showsSection = createElementWithClass("div", "shows");
+
+const showsContainer = createElementWithClass("div", "shows-container");
+
+const showsTitle = createElementWithClass("h2", "shows-container__title");
+showsTitle.innerHTML = "Shows";
+
+const showsContainerInner = createElementWithClass(
+  "div",
+  "shows-container__inner"
+);
+
+const tabletLabelsContainer = createElementWithClass("div", "tablet-labels");
+
+const dateLabel = createElementWithClass("p", "tablet-labels__label", "label");
+dateLabel.innerHTML = "Date";
+
+const venueLabel = createElementWithClass("p", "tablet-labels__label", "label");
+venueLabel.innerHTML = "Venue";
+
+const locationLabel = createElementWithClass(
+  "p",
+  "tablet-labels__label",
+  "label"
+);
+locationLabel.innerHTML = "Location";
+
+const showCards = createElementWithClass("div", "show-cards");
+
+main.appendChild(showsSection);
+showsSection.appendChild(showsContainer);
+showsContainer.appendChild(showsTitle);
+showsContainer.appendChild(showsContainerInner);
+
+showsContainerInner.appendChild(tabletLabelsContainer);
+showsContainerInner.appendChild(showCards);
+
+tabletLabelsContainer.appendChild(dateLabel);
+tabletLabelsContainer.appendChild(venueLabel);
+tabletLabelsContainer.appendChild(locationLabel);
 
 //display all shows on page from list
-shows.forEach((show) => {
-  //create each card
-  const showCard = document.createElement("div");
-  showCard.classList.add("show-card");
-  //create date label with style
-  const cardLabelDate = document.createElement("h3");
-  cardLabelDate.classList.add("label", "show-card__label");
-  cardLabelDate.innerText = "Date";
-  //create date info with style
-  const cardInfoDate = document.createElement("p");
-  cardInfoDate.classList.add("show-card__info");
-  cardInfoDate.innerText = show.date;
-  //create venue label with style
-  const cardLabelVenue = document.createElement("h3");
-  cardLabelVenue.classList.add("label", "show-card__label");
-  cardLabelVenue.innerText = "Venue";
-  //create venue info with style
-  const cardInfoVenue = document.createElement("p");
-  cardInfoVenue.classList.add("show-card__info");
-  cardInfoVenue.innerText = show.venue;
-  //create location label with style
-  const cardLabelLocation = document.createElement("h3");
-  cardLabelLocation.classList.add("label", "show-card__label");
-  cardLabelLocation.innerText = "Location";
-  //create location info with style
-  const cardInfoLocation = document.createElement("p");
-  cardInfoLocation.classList.add("show-card__info");
-  cardInfoLocation.innerText = show.location;
-  //create button with style
-  const cardBtn = document.createElement("button");
-  cardBtn.classList.add("show-card__button");
-  cardBtn.innerText = "Buy Tickets";
+function renderShows(showsArray) {
+  showsArray.forEach((show) => {
+    //create each card
+    const showCard = createElementWithClass("div", "show-card");
 
-  //append to parent
-  showCards.appendChild(showCard);
-  showCard.appendChild(cardLabelDate);
-  showCard.appendChild(cardInfoDate);
-  showCard.appendChild(cardLabelVenue);
-  showCard.appendChild(cardInfoVenue);
-  showCard.appendChild(cardLabelLocation);
-  showCard.appendChild(cardInfoLocation);
-  showCard.appendChild(cardBtn);
-});
+    //create date label with style
+    const cardLabelDate = createElementWithClass(
+      "h3",
+      "label",
+      "show-card__label"
+    );
+    cardLabelDate.innerText = "Date";
 
-const allShowCards = document.querySelectorAll(".show-card");
+    //create date info with style
+    const cardInfoDate = createElementWithClass("p", "show-card__info");
+    cardInfoDate.innerText = changeDateFormat(show.date);
 
-//add style to selected card and remove when another is selected
-allShowCards.forEach((card) => {
-  card.addEventListener("click", (event) => {
-    allShowCards.forEach((card) => {
-      card.classList.remove("show-card--selected");
-    });
-    card.classList.add("show-card--selected");
+    //create venue label with style
+    const cardLabelVenue = createElementWithClass(
+      "h3",
+      "label",
+      "show-card__label"
+    );
+    cardLabelVenue.innerText = "Venue";
+
+    //create venue info with style
+    const cardInfoVenue = createElementWithClass("p", "show-card__info");
+    cardInfoVenue.innerText = show.place;
+
+    //create location label with style
+    const cardLabelLocation = createElementWithClass(
+      "h3",
+      "label",
+      "show-card__label"
+    );
+    cardLabelLocation.innerText = "Location";
+
+    //create location info with style
+    const cardInfoLocation = createElementWithClass("p", "show-card__info");
+    cardInfoLocation.innerText = show.location;
+
+    //create button with style
+    const cardBtn = createElementWithClass("button", "show-card__button");
+    cardBtn.innerText = "Buy Tickets";
+
+    //append to parent
+    showCards.appendChild(showCard);
+    showCard.appendChild(cardLabelDate);
+    showCard.appendChild(cardInfoDate);
+    showCard.appendChild(cardLabelVenue);
+    showCard.appendChild(cardInfoVenue);
+    showCard.appendChild(cardLabelLocation);
+    showCard.appendChild(cardInfoLocation);
+    showCard.appendChild(cardBtn);
   });
-});
+}
+
+function changeDateFormat(date) {
+  return new Date(Number(date)).toDateString();
+}
+
+function createElementWithClass(elementName, className1, className2) {
+  const element = document.createElement(elementName);
+  element.classList.add(className1, className2);
+  return element;
+}

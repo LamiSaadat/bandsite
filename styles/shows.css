@@ -59,7 +59,7 @@ button {
 .header {
   background-color: #323232;
 }
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   .header {
     display: flex;
     align-items: flex-end;
@@ -84,7 +84,7 @@ button {
   width: 100%;
   text-align: center;
 }
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   .header__link {
     margin-left: 3rem;
   }
@@ -101,7 +101,7 @@ button {
   color: #fff;
   padding: 2rem 1rem 1rem 1rem;
 }
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   .footer {
     display: flex;
     flex-wrap: wrap;
@@ -117,7 +117,7 @@ button {
 .footer__logo {
   padding-top: 4rem;
 }
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   .footer__logo {
     order: 2;
     width: 50%;
@@ -126,7 +126,7 @@ button {
   }
 }
 
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   .socials {
     display: flex;
     order: 1;
@@ -145,7 +145,7 @@ button {
   line-height: 2rem;
   font-weight: 600;
 }
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   .socials__title {
     font-size: 2.25rem;
     line-height: 2.75rem;
@@ -156,7 +156,7 @@ button {
 .socials__icons {
   padding-top: 1rem;
 }
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   .socials__icons {
     padding-top: 0;
     display: flex;
@@ -171,7 +171,7 @@ button {
     margin-left: 1.3rem;
   }
 }
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   .socials__icon {
     width: 1.3rem;
     height: 1.3rem;
@@ -180,7 +180,7 @@ button {
 .socials__icon:not(:first-child) {
   padding-left: 2rem;
 }
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   .socials__icon:not(:first-child) {
     padding-left: 0;
   }
@@ -196,7 +196,7 @@ button {
   line-height: 1.125rem;
   font-weight: 400;
 }
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   .details {
     font-size: 0.875rem;
     line-height: 1.375rem;
@@ -225,7 +225,7 @@ button {
   font-weight: 600;
   padding: 1rem 0;
 }
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   .details__name {
     padding-bottom: 1.5rem;
   }
@@ -233,7 +233,7 @@ button {
 .details__email {
   padding-top: 1rem;
 }
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   .details__email {
     padding-top: 1.5rem;
   }
@@ -242,7 +242,7 @@ button {
 .copyright {
   margin-top: 1rem;
 }
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   .copyright {
     order: 4;
     margin-top: 3rem;
@@ -256,7 +256,7 @@ button {
 .copyright__text {
   font-size: 0.6875rem;
 }
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   .copyright__text {
     font-style: 0.875rem;
     line-height: 1.25rem;
@@ -286,26 +286,26 @@ html {
   font-family: "AvenirNext LT Pro", sans-serif;
 }
 
-.hero {
+.hero-section {
   background-image: url("../assets/Images/hero-shows.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   height: 15rem;
   width: 100%;
 }
-.hero--overlay {
+.hero-section--overlay {
   background-color: rgba(50, 50, 50, 0.5);
-  height: 100%;
   width: 100%;
+  height: 100%;
 }
-@media screen and (min-width: 786px) {
-  .hero {
+@media screen and (min-width: 768px) {
+  .hero-section {
     height: 30rem;
   }
 }
 @media screen and (min-width: 1280px) {
-  .hero {
+  .hero-section {
     height: 50rem;
   }
 }
@@ -315,7 +315,7 @@ html {
   max-width: 1280px;
   margin: 0 auto;
 }
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   .hero {
     display: flex;
     flex-direction: column;
@@ -330,7 +330,7 @@ html {
     padding: 15rem 5rem 5rem 5rem;
   }
 }
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   .hero__text-section {
     padding: 1rem 0 0 2rem;
   }
@@ -350,7 +350,7 @@ html {
   color: #fff;
   padding-left: 1rem;
 }
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   .hero__album {
     font-size: 3.75rem;
     line-height: 4.25rem;
@@ -372,7 +372,7 @@ html {
   padding: 0.5rem 0 0 1rem;
   width: 80%;
 }
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   .hero__text {
     font-size: 3.75rem;
     line-height: 4.25rem;
@@ -393,7 +393,7 @@ html {
   border-radius: 0.3125rem;
   padding: 0.5rem 0 0 1rem;
 }
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   .hero__song {
     width: 60%;
     height: 9.375rem;
@@ -417,7 +417,7 @@ html {
   font-weight: 600;
   padding: 2rem 1rem 0.6rem 1rem;
 }
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   .shows-container__title {
     font-size: 2.25rem;
     line-height: 2.75rem;
@@ -441,7 +441,7 @@ html {
 .tablet-labels {
   display: none;
 }
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   .tablet-labels {
     display: flex;
     justify-content: flex-start;
@@ -457,7 +457,7 @@ html {
   }
 }
 
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   .show-cards {
     padding: 0 2rem;
   }
@@ -471,14 +471,14 @@ html {
 .show-card > * {
   flex: 1;
 }
-.show-card--selected {
-  background-color: #e1e1e1;
-}
-.show-card:hover {
+.show-card:not(.show-card--selected):hover {
   background-color: #fafafa;
   cursor: pointer;
 }
-@media screen and (min-width: 786px) {
+.show-card--selected {
+  background-color: #e1e1e1;
+}
+@media screen and (min-width: 768px) {
   .show-card {
     display: flex;
     justify-content: space-around;
@@ -496,7 +496,7 @@ html {
   color: #afafaf;
   margin-bottom: 0.3rem;
 }
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   .show-card__label {
     display: none;
   }
@@ -508,7 +508,7 @@ html {
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   .show-card__info {
     margin-bottom: 0;
   }
@@ -516,7 +516,7 @@ html {
 .show-card__button {
   margin-top: 0.2rem;
 }
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   .show-card__button {
     width: 20%;
   }
