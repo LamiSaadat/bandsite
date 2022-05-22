@@ -1,13 +1,13 @@
 @use "./partials/index" as *;
 
 //hero container
-.hero {
-  background-image: url(../assets/Images/hero-bio.jpg);
+.hero-section {
+  background-image: url("../assets/Images/hero-bio.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 13rem;
   width: 100%;
-  position: relative;
+  // position: relative;
 
   &--overlay {
     background-color: rgba($color: $primary-background, $alpha: 0.5);
@@ -22,27 +22,51 @@
   @include desktop {
     height: 42rem;
   }
+}
+.hero {
+  // padding-top: 1rem;
+  max-width: $max-content-width;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  @include tablet {
+    // flex-direction: column;
+  }
+
+  @include desktop {
+    // flex-direction: row;
+    // justify-content: space-around;
+    // align-items: center;
+    // width: 90%;
+    // padding: 15rem 5rem 5rem 5rem;
+  }
 
   &__text {
     @include page-header-mobile-font;
     color: $primary-text;
     padding-left: 1rem;
-    position: absolute;
-    top: 43%;
+    // position: absolute;
+    // top: 43%;
 
     @include tablet {
       @include page-header-desktop-font;
-      top: 50%;
-      left: 3%;
+      // top: 50%;
+      // left: 3%;
     }
 
     @include desktop {
-      padding-left: 6rem;
+      // padding-left: 1rem;
     }
   }
 }
 
 //about section
+.about-wrapper {
+  max-width: $max-content-width;
+  margin: 0 auto;
+}
 .about {
   padding: 1rem 1rem;
 
@@ -156,15 +180,21 @@
 
 //gallery
 .gallery {
+  background-color: $alternative-background;
+}
+
+.gallery-wrapper {
   padding: 1rem 1rem 0 1rem;
   background-color: $alternative-background;
+  max-width: $max-content-width;
+  margin: 0 auto;
 
   @include tablet {
     padding: 3rem 2rem 2rem 2rem;
   }
 
   @include desktop {
-    padding: 3rem 8rem 2rem 8rem;
+    padding: 3rem 0 2rem 0;
   }
 
   &__title {
@@ -199,14 +229,14 @@
 .comments-wrapper {
   padding: 1rem;
   margin: 0 auto;
-  max-width: 1280px;
+  max-width: $max-content-width;
 
   @include tablet {
     padding: 3rem 2rem 2rem 2rem;
   }
 
   @include desktop {
-    padding: 3rem 8rem 2rem 8rem;
+    padding: 3rem 0 2rem 0;
   }
 
   &__title {
@@ -214,6 +244,10 @@
 
     @include tablet {
       @include section-header-desktop-font;
+      margin-left: 0;
+    }
+
+    @include desktop {
       margin-left: 0;
     }
   }
@@ -224,7 +258,7 @@
   display: flex;
   justify-content: space-evenly;
   padding-bottom: 1rem;
-  max-width: 786px;
+  max-width: $tablet-width;
 
   @include tablet {
     width: 80%;
@@ -262,27 +296,38 @@
     margin-bottom: 0.25rem;
   }
 
-  &__name-input {
-    height: 2.25rem;
+  &__name-input,
+  &__comment-input {
     background-color: $alternative-background;
     border: 0.0625rem solid $secondary-text;
     border-radius: 0.25rem;
-    padding: 0.75rem;
+    margin-bottom: 0.25rem;
+    @include body-copy-mobile-font;
+    font-family: "AvenirNext LT Pro", sans-serif;
+    padding-left: 0.3rem;
+  }
+
+  &__name-input {
+    height: 2.25rem;
     margin-bottom: 0.25rem;
 
     @include tablet {
-      height: 48px;
+      height: 3rem;
     }
   }
 
   &__comment-input {
     height: 6rem;
-    background-color: $alternative-background;
-    border: 0.0625rem solid $secondary-text;
-    border-radius: 0.25rem;
     resize: none;
-    padding: 1rem;
     margin-bottom: 0.25rem;
+  }
+
+  ::placeholder {
+    @include body-copy-mobile-font;
+    font-family: "AvenirNext LT Pro", sans-serif;
+    font-size: inherit;
+    color: $primary-background;
+    padding: 0.5rem 0 0 0.3rem;
   }
 
   &__button {
@@ -293,18 +338,11 @@
   }
 }
 
-::placeholder {
-  @include body-copy-mobile-font;
-  font-size: 0.6rem;
-  color: $primary-background;
-  padding: 0.5rem;
-}
-
 .comment-card {
   display: flex;
   justify-content: space-evenly;
   padding: 1rem 0 1rem 0;
-  max-width: 786px;
+  max-width: $tablet-width;
 
   @include tablet {
     width: 80%;

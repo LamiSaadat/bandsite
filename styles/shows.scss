@@ -27,7 +27,7 @@
 
 .hero {
   padding-top: 1rem;
-  max-width: 1280px;
+  max-width: $max-content-width;
   margin: 0 auto;
 
   @include tablet {
@@ -111,7 +111,7 @@
 
 //shows
 .shows-container {
-  max-width: 1280px;
+  max-width: $max-content-width;
   margin: 0 auto;
 
   &__title {
@@ -122,17 +122,22 @@
       @include section-header-desktop-font;
       padding: 2rem 1rem 2rem 3rem;
     }
+
+    @include desktop {
+      padding: 2rem 0;
+    }
   }
 
   @include desktop {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 2rem 0;
   }
 
   &__inner {
     @include desktop {
       margin-top: 3rem;
-      width: 70%;
+      width: 80%;
     }
   }
 }
@@ -145,18 +150,22 @@
     justify-content: flex-start;
     padding: 0 3rem;
     width: 76%;
+  }
 
-    &__label {
-      @include body-copy-desktop-font;
-      font-weight: 600;
-      flex: 1;
-    }
+  &__label {
+    @include body-copy-desktop-font;
+    font-weight: 600;
+    flex: 1;
   }
 }
 
 .show-cards {
   @include tablet {
     padding: 0 2rem;
+  }
+
+  @include desktop {
+    padding: 0;
   }
 }
 .show-card {

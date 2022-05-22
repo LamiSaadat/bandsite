@@ -18,6 +18,7 @@
 }
 a {
   text-decoration: none;
+  color: #fff;
 }
 
 li {
@@ -59,50 +60,66 @@ button {
 .header {
   background-color: #323232;
 }
+
+.header-wrapper {
+  background-color: #323232;
+  max-width: 1090px;
+}
 @media screen and (min-width: 768px) {
-  .header {
+  .header-wrapper {
     display: flex;
     align-items: flex-end;
     padding-left: 1rem;
   }
 }
 @media screen and (min-width: 1280px) {
-  .header {
-    padding: 0 8rem;
+  .header-wrapper {
+    width: 1090px;
+    margin: 0 auto;
   }
 }
-.header__logo {
+.header-wrapper__logo {
   text-align: center;
   padding: 1rem;
+  display: block;
+  margin: auto;
 }
-.header__list {
+.header-wrapper__list {
   display: flex;
   justify-content: space-around;
 }
-.header__link {
-  padding-bottom: 1rem;
+.header-wrapper__link {
+  height: 100%;
+  width: 100%;
+  display: block;
+  padding: 1rem;
+}
+.header-wrapper__item {
   width: 100%;
   text-align: center;
 }
 @media screen and (min-width: 768px) {
-  .header__link {
+  .header-wrapper__item {
     margin-left: 3rem;
   }
 }
-.header__link--active {
+.header-wrapper__item--active {
   border-bottom: 0.25rem solid #fff;
-}
-.header__item {
-  color: #fff;
 }
 
 .footer {
   background-color: #323232;
+}
+
+.footer-wrapper {
+  background-color: #323232;
   color: #fff;
   padding: 2rem 1rem 1rem 1rem;
+  max-width: 1090px;
+  margin: 0 auto;
 }
 @media screen and (min-width: 768px) {
-  .footer {
+  .footer-wrapper {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -110,15 +127,15 @@ button {
   }
 }
 @media screen and (min-width: 1280px) {
-  .footer {
-    padding: 4rem 8rem;
+  .footer-wrapper {
+    padding: 4rem 0;
   }
 }
-.footer__logo {
+.footer-wrapper__logo {
   padding-top: 4rem;
 }
 @media screen and (min-width: 768px) {
-  .footer__logo {
+  .footer-wrapper__logo {
     order: 2;
     width: 50%;
     padding-top: 0;
@@ -286,28 +303,35 @@ html {
   font-family: "AvenirNext LT Pro", sans-serif;
 }
 
-.hero {
-  background-image: url(../assets/Images/hero-bio.jpg);
+.hero-section {
+  background-image: url("../assets/Images/hero-bio.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 13rem;
   width: 100%;
-  position: relative;
 }
-.hero--overlay {
+.hero-section--overlay {
   background-color: rgba(50, 50, 50, 0.5);
   height: 100%;
   width: 100%;
 }
 @media screen and (min-width: 768px) {
-  .hero {
+  .hero-section {
     height: 31rem;
   }
 }
 @media screen and (min-width: 1280px) {
-  .hero {
+  .hero-section {
     height: 42rem;
   }
+}
+
+.hero {
+  max-width: 1090px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 .hero__text {
   font-size: 1.5rem;
@@ -315,22 +339,17 @@ html {
   font-weight: 600;
   color: #fff;
   padding-left: 1rem;
-  position: absolute;
-  top: 43%;
 }
 @media screen and (min-width: 768px) {
   .hero__text {
     font-size: 3.75rem;
     line-height: 4.25rem;
     font-weight: 600;
-    top: 50%;
-    left: 3%;
   }
 }
-@media screen and (min-width: 1280px) {
-  .hero__text {
-    padding-left: 6rem;
-  }
+.about-wrapper {
+  max-width: 1090px;
+  margin: 0 auto;
 }
 
 .about {
@@ -351,14 +370,14 @@ html {
     padding: 1rem 6rem;
   }
 }
-.about__title, .comments-wrapper__title, .gallery__title {
+.about__title, .comments-wrapper__title, .gallery-wrapper__title {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 600;
   padding-bottom: 0.6rem;
 }
 @media screen and (min-width: 768px) {
-  .about__title, .comments-wrapper__title, .gallery__title {
+  .about__title, .comments-wrapper__title, .gallery-wrapper__title {
     font-size: 2.25rem;
     line-height: 2.75rem;
     font-weight: 600;
@@ -366,13 +385,13 @@ html {
   }
 }
 @media screen and (min-width: 768px) {
-  .about__title, .comments-wrapper__title, .gallery__title {
+  .about__title, .comments-wrapper__title, .gallery-wrapper__title {
     font-size: 2.25rem;
     line-height: 2.75rem;
     font-weight: 600;
   }
 }
-.about__image, .gallery__image {
+.about__image, .gallery-wrapper__image {
   width: 100%;
 }
 .about__quote, .about__quote-author {
@@ -464,37 +483,43 @@ html {
 }
 
 .gallery {
-  padding: 1rem 1rem 0 1rem;
   background-color: #fafafa;
 }
+
+.gallery-wrapper {
+  padding: 1rem 1rem 0 1rem;
+  background-color: #fafafa;
+  max-width: 1090px;
+  margin: 0 auto;
+}
 @media screen and (min-width: 768px) {
-  .gallery {
+  .gallery-wrapper {
     padding: 3rem 2rem 2rem 2rem;
   }
 }
 @media screen and (min-width: 1280px) {
-  .gallery {
-    padding: 3rem 8rem 2rem 8rem;
+  .gallery-wrapper {
+    padding: 3rem 0 2rem 0;
   }
 }
 @media screen and (min-width: 768px) {
-  .gallery__title {
+  .gallery-wrapper__title {
     margin-left: 0;
   }
 }
 @media screen and (min-width: 768px) {
-  .gallery__images {
+  .gallery-wrapper__images {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 1rem;
   }
 }
-.gallery__image {
+.gallery-wrapper__image {
   padding-bottom: 0.6rem;
 }
 @media screen and (min-width: 768px) {
-  .gallery__image {
+  .gallery-wrapper__image {
     max-width: 32%;
     margin-bottom: 0.8rem;
   }
@@ -503,7 +528,7 @@ html {
 .comments-wrapper {
   padding: 1rem;
   margin: 0 auto;
-  max-width: 1280px;
+  max-width: 1090px;
 }
 @media screen and (min-width: 768px) {
   .comments-wrapper {
@@ -512,7 +537,7 @@ html {
 }
 @media screen and (min-width: 1280px) {
   .comments-wrapper {
-    padding: 3rem 8rem 2rem 8rem;
+    padding: 3rem 0 2rem 0;
   }
 }
 @media screen and (min-width: 768px) {
@@ -523,12 +548,17 @@ html {
     margin-left: 0;
   }
 }
+@media screen and (min-width: 1280px) {
+  .comments-wrapper__title {
+    margin-left: 0;
+  }
+}
 
 .form-container {
   display: flex;
   justify-content: space-evenly;
   padding-bottom: 1rem;
-  max-width: 786px;
+  max-width: 768px;
 }
 @media screen and (min-width: 768px) {
   .form-container {
@@ -563,27 +593,57 @@ html {
   flex-direction: column;
   margin-bottom: 0.25rem;
 }
-.form-container__name-input {
-  height: 2.25rem;
+.form-container__name-input, .form-container__comment-input {
   background-color: #fafafa;
   border: 0.0625rem solid #afafaf;
   border-radius: 0.25rem;
-  padding: 0.75rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  font-family: "AvenirNext LT Pro", sans-serif;
+  padding-left: 0.3rem;
+}
+.form-container__name-input {
+  height: 2.25rem;
   margin-bottom: 0.25rem;
 }
 @media screen and (min-width: 768px) {
   .form-container__name-input {
-    height: 48px;
+    height: 3rem;
   }
 }
 .form-container__comment-input {
   height: 6rem;
-  background-color: #fafafa;
-  border: 0.0625rem solid #afafaf;
-  border-radius: 0.25rem;
   resize: none;
-  padding: 1rem;
   margin-bottom: 0.25rem;
+}
+.form-container ::-moz-placeholder {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  font-family: "AvenirNext LT Pro", sans-serif;
+  font-size: inherit;
+  color: #323232;
+  padding: 0.5rem 0 0 0.3rem;
+}
+.form-container :-ms-input-placeholder {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  font-family: "AvenirNext LT Pro", sans-serif;
+  font-size: inherit;
+  color: #323232;
+  padding: 0.5rem 0 0 0.3rem;
+}
+.form-container ::placeholder {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  font-family: "AvenirNext LT Pro", sans-serif;
+  font-size: inherit;
+  color: #323232;
+  padding: 0.5rem 0 0 0.3rem;
 }
 @media screen and (min-width: 768px) {
   .form-container__button {
@@ -592,38 +652,11 @@ html {
   }
 }
 
-::-moz-placeholder {
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
-  font-weight: 400;
-  font-size: 0.6rem;
-  color: #323232;
-  padding: 0.5rem;
-}
-
-:-ms-input-placeholder {
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
-  font-weight: 400;
-  font-size: 0.6rem;
-  color: #323232;
-  padding: 0.5rem;
-}
-
-::placeholder {
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
-  font-weight: 400;
-  font-size: 0.6rem;
-  color: #323232;
-  padding: 0.5rem;
-}
-
 .comment-card {
   display: flex;
   justify-content: space-evenly;
   padding: 1rem 0 1rem 0;
-  max-width: 786px;
+  max-width: 768px;
 }
 @media screen and (min-width: 768px) {
   .comment-card {

@@ -4,6 +4,7 @@
 
 a {
   text-decoration: none;
+  color: $primary-text;
 }
 
 li {
@@ -41,8 +42,18 @@ button {
 }
 
 //nav bar
+// .header-wrapper {
+//   background-color: $primary-background;
+//   max-width: $max-content-width;
+//   margin: 0 auto;
+// }
 .header {
   background-color: $primary-background;
+}
+
+.header-wrapper {
+  background-color: $primary-background;
+  max-width: $max-content-width;
 
   @include tablet {
     display: flex;
@@ -51,12 +62,15 @@ button {
   }
 
   @include desktop {
-    padding: 0 8rem;
+    width: $max-content-width;
+    margin: 0 auto;
   }
 
   &__logo {
     text-align: center;
     padding: 1rem;
+    display: block;
+    margin: auto;
   }
 
   &__list {
@@ -65,7 +79,14 @@ button {
   }
 
   &__link {
-    padding-bottom: 1rem;
+    height: 100%;
+    width: 100%;
+    display: block;
+    padding: 1rem;
+  }
+
+  &__item {
+    // padding-bottom: 1rem;
     width: 100%;
     text-align: center;
 
@@ -77,17 +98,18 @@ button {
       border-bottom: 0.25rem solid $primary-text;
     }
   }
-
-  &__item {
-    color: $primary-text;
-  }
 }
 
 //footer
 .footer {
   background-color: $primary-background;
+}
+.footer-wrapper {
+  background-color: $primary-background;
   color: $primary-text;
   padding: 2rem 1rem 1rem 1rem;
+  max-width: $max-content-width;
+  margin: 0 auto;
 
   @include tablet {
     display: flex;
@@ -97,7 +119,7 @@ button {
   }
 
   @include desktop {
-    padding: 4rem 8rem;
+    padding: 4rem 0;
   }
 
   &__logo {

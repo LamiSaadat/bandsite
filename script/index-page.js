@@ -4,11 +4,13 @@ const apiKeyString = `?api_key=${API_KEY}`;
 const getCommentsEndpoint = `${BASE_URL}/comments${apiKeyString}`;
 let commentsArray;
 
+//retrieve data from API and display on page
 function getComments() {
   axios.get(getCommentsEndpoint).then((response) => {
     commentsArray = response.data;
-    //call the list of comments
+    //sort data
     sortCommentsByDate(commentsArray);
+    //display data
     renderComments(commentsArray);
   });
 }
@@ -20,45 +22,9 @@ function renderComments(commentsArray) {
   commentCards.innerHTML = "";
   //loop through comment list to display
   commentsArray.forEach((comment) => {
-    //create comment card div with style
-    const commentCardEl = document.createElement("div");
-    commentCardEl.classList.add("comment-card");
-    //create comment card image div with style
-    const commentImageEl = document.createElement("div");
-    commentImageEl.classList.add("comment-card__image");
-    //create output div with style
-    const commentOutputEl = document.createElement("div");
-    commentOutputEl.classList.add("comment-card__output");
-    //create info div with style
-    const commentInfoEl = document.createElement("div");
-    commentInfoEl.classList.add("comment-card__info");
-    //create name p with style
-    const commentNameEl = document.createElement("p");
-    commentNameEl.classList.add("comment-card__name");
-    commentNameEl.innerText = comment.name;
-    //create date p with style
-    const commentDateEl = document.createElement("p");
-    commentDateEl.classList.add("comment-card__date");
-    commentDateEl.innerText = changeTimeFormat(comment.timestamp);
-    //create comment holder with style
-    const commentHolderEl = document.createElement("div");
-    commentHolderEl.classList.add("comment-card__comment");
-    //create text p with style
-    const commentTextEl = document.createElement("p");
-    commentTextEl.classList.add("comment-card__text");
-    commentTextEl.innerText = comment.comment;
+    let commentCardEl = createCommentCardElement(comment);
 
-    //append to parent
     commentCards.appendChild(commentCardEl);
-    commentCardEl.appendChild(commentImageEl);
-    commentCardEl.appendChild(commentOutputEl);
-
-    commentOutputEl.appendChild(commentInfoEl);
-    commentOutputEl.appendChild(commentHolderEl);
-
-    commentInfoEl.appendChild(commentNameEl);
-    commentInfoEl.appendChild(commentDateEl);
-    commentHolderEl.appendChild(commentTextEl);
   });
 }
 
@@ -67,11 +33,13 @@ const form = document.querySelector(".form-container__form");
 form.addEventListener("submit", (event) => {
   //prevent page from reloading when form submits
   event.preventDefault();
+  //add comments to page
   addComments(event.target.name.value, event.target.comment.value);
   //remove input text when form submits
   event.target.reset();
 });
 
+//add comments to API, retrieve them and display on page
 function addComments(name, comment) {
   axios
     .post(getCommentsEndpoint, {
@@ -94,8 +62,58 @@ function addComments(name, comment) {
     });
 }
 
-//load list of comments when page first is loaded
+//display list of comments when page first loads
 getComments();
+
+//create comment element with content
+function createCommentCardElement(comment) {
+  //create comment card div with style
+  const commentCardEl = createElementWithClass("div", "comment-card");
+  commentCards.appendChild(commentCardEl);
+
+  //create comment card image div with style
+  const commentImageEl = createElementWithClass("div", "comment-card__image");
+  commentCardEl.appendChild(commentImageEl);
+
+  //create output div with style
+  const commentOutputEl = createElementWithClass("div", "comment-card__output");
+  commentCardEl.appendChild(commentOutputEl);
+
+  //create info div with style
+  const commentInfoEl = createElementWithClass("div", "comment-card__info");
+  commentOutputEl.appendChild(commentInfoEl);
+
+  //create name p with style
+  const commentNameEl = createElementWithClass("p", "comment-card__name");
+  commentNameEl.innerText = comment.name;
+  commentInfoEl.appendChild(commentNameEl);
+
+  //create date p with style
+  const commentDateEl = createElementWithClass("p", "comment-card__date");
+  commentDateEl.innerText = changeDateFormat(comment.timestamp);
+  commentInfoEl.appendChild(commentDateEl);
+
+  //create comment holder with style
+  const commentHolderEl = createElementWithClass(
+    "div",
+    "comment-card__comment"
+  );
+  commentOutputEl.appendChild(commentHolderEl);
+
+  //create text p with style
+  const commentTextEl = createElementWithClass("p", "comment-card__text");
+  commentTextEl.innerText = comment.comment;
+  commentHolderEl.appendChild(commentTextEl);
+
+  return commentCardEl;
+}
+
+//function to create elements wit style
+function createElementWithClass(elementName, className) {
+  const element = document.createElement(elementName);
+  element.classList.add(className);
+  return element;
+}
 
 //sort comments by date
 function sortCommentsByDate(array) {
@@ -104,20 +122,7 @@ function sortCommentsByDate(array) {
   });
 }
 
-//change the time format
-function changeTimeFormat(timestamp) {
+//change the date format
+function changeDateFormat(timestamp) {
   return new Date(timestamp).toLocaleDateString();
 }
-// function createElementWithClass(elementName, className) {
-//   const element = document.createElement(elementName);
-//   element.classList.add(className);
-//   return element;
-// }
-
-// function createCommentCardElement() {
-//   const commentCardEl = createElementWithClass("div", "comment-card");
-
-//   return commentCardEl;
-// }
-
-// function createCardContent() {}
