@@ -97,6 +97,7 @@ button {
 .header-wrapper__item {
   width: 100%;
   text-align: center;
+  color: #e1e1e1;
 }
 @media screen and (min-width: 768px) {
   .header-wrapper__item {
@@ -104,6 +105,12 @@ button {
   }
 }
 .header-wrapper__item--active {
+  font-weight: 700;
+  color: #fff;
+  border-bottom: 0.25rem solid #fff;
+}
+.header-wrapper__item:hover {
+  color: #fff;
   border-bottom: 0.25rem solid #fff;
 }
 

@@ -89,12 +89,20 @@ button {
     // padding-bottom: 1rem;
     width: 100%;
     text-align: center;
+    color: $secondary-inactive;
 
     @include tablet {
       margin-left: 3rem;
     }
 
     &--active {
+      font-weight: 700;
+      color: $primary-text;
+      border-bottom: 0.25rem solid $primary-text;
+    }
+
+    &:hover {
+      color: $primary-text;
       border-bottom: 0.25rem solid $primary-text;
     }
   }
