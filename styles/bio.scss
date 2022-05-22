@@ -285,7 +285,7 @@
   &__form {
     display: flex;
     flex-direction: column;
-    width: 85%;
+    width: 90%;
     padding-left: 0.5rem;
   }
 
@@ -335,6 +335,10 @@
       width: 10rem;
       margin-left: auto;
     }
+
+    &:hover {
+      background-color: $secondary-background;
+    }
   }
 }
 
@@ -366,8 +370,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 85%;
-    padding-left: 1rem;
+    width: 90%;
   }
 
   &__info {

@@ -69,7 +69,6 @@ button {
   .header-wrapper {
     display: flex;
     align-items: flex-end;
-    padding-left: 1rem;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -83,6 +82,16 @@ button {
   padding: 1rem;
   display: block;
   margin: auto;
+}
+@media screen and (min-width: 768px) {
+  .header-wrapper__logo {
+    padding: 1rem 0 1rem 3rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header-wrapper__logo {
+    padding: 1rem 0 1rem 0;
+  }
 }
 .header-wrapper__list {
   display: flex;
@@ -592,7 +601,7 @@ html {
 .form-container__form {
   display: flex;
   flex-direction: column;
-  width: 85%;
+  width: 90%;
   padding-left: 0.5rem;
 }
 .form-container__name, .form-container__comment {
@@ -658,6 +667,9 @@ html {
     margin-left: auto;
   }
 }
+.form-container__button:hover {
+  background-color: #000;
+}
 
 .comment-card {
   display: flex;
@@ -688,8 +700,7 @@ html {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 85%;
-  padding-left: 1rem;
+  width: 90%;
 }
 .comment-card__info {
   display: flex;
