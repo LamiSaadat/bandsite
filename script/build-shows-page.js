@@ -4,13 +4,14 @@ const apiKeyString = `?api_key=${API_KEY}`;
 const getShowsEndpoint = `${BASE_URL}/showdates${apiKeyString}`;
 let showsArray;
 
+//get show data from API
 function getShows() {
   axios.get(getShowsEndpoint).then((response) => {
     showsArray = response.data;
 
     renderShows(showsArray);
 
-    // add style to selected card and remove when another is selected
+    //add style to selected card and remove when another is selected
     const allShowCards = document.querySelectorAll(".show-card");
     allShowCards.forEach((card) => {
       card.addEventListener("click", (event) => {
@@ -23,8 +24,10 @@ function getShows() {
   });
 }
 
+//display show data on load
 getShows();
 
+//create show container
 const main = document.querySelector("main");
 
 const showsSection = createElementWithClass("div", "shows");

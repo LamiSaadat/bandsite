@@ -188,6 +188,9 @@ button {
 }
 .socials__icons {
   padding-top: 1rem;
+  display: flex;
+  width: 7rem;
+  justify-content: space-between;
 }
 @media screen and (min-width: 768px) {
   .socials__icons {
@@ -346,7 +349,6 @@ html {
 }
 
 .hero {
-  padding-top: 1rem;
   max-width: 1090px;
   margin: 0 auto;
 }
@@ -509,8 +511,7 @@ html {
 }
 
 .show-card {
-  margin-bottom: 1rem;
-  padding: 1rem;
+  padding: 2rem 1rem;
   border-bottom: 0.0625rem solid #e1e1e1;
 }
 .show-card > * {
@@ -564,6 +565,9 @@ html {
   .show-card__button {
     width: 20%;
   }
+}
+.show-card__button:hover {
+  background-color: #000;
 }
 
 .show-card:last-child {

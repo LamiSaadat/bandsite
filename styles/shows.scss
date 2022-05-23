@@ -1,11 +1,11 @@
 @use "./partials/index" as *;
 
-//hero
+//hero container
 .hero-section {
   background-image: url("../assets/Images/hero-shows.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center; //change values to per cents at each breakpoint
+  background-position: center;
   height: 15rem;
   width: 100%;
 
@@ -19,7 +19,6 @@
 
   @include tablet {
     height: 30rem;
-    // display: flex;
   }
 
   @include desktop {
@@ -27,8 +26,8 @@
   }
 }
 
+//hero content
 .hero {
-  padding-top: 1rem;
   max-width: $max-content-width;
   margin: 0 auto;
 
@@ -42,7 +41,6 @@
     justify-content: space-between;
     align-items: center;
     width: 90%;
-    // padding: 15rem 1rem 5rem 1rem;
   }
 
   &__text-section {
@@ -111,7 +109,7 @@
   }
 }
 
-//shows
+//shows container
 .shows-container {
   max-width: $max-content-width;
   margin: 0 auto;
@@ -144,6 +142,7 @@
   }
 }
 
+//show labels only for tablet and desktop
 .tablet-labels {
   display: none;
 
@@ -161,6 +160,7 @@
   }
 }
 
+//show display
 .show-cards {
   @include tablet {
     padding: 0 2rem;
@@ -171,8 +171,7 @@
   }
 }
 .show-card {
-  margin-bottom: 1rem;
-  padding: 1rem;
+  padding: 2rem 1rem;
   border-bottom: 0.0625rem solid $secondary-inactive;
 
   & > * {
@@ -210,7 +209,6 @@
 
   &__info {
     @include body-copy-mobile-font;
-    // font-weight: 600;
     margin-bottom: 0.5rem;
 
     @include tablet {
@@ -223,6 +221,10 @@
 
     @include tablet {
       width: 20%;
+    }
+
+    &:hover {
+      background-color: $secondary-background;
     }
   }
 }

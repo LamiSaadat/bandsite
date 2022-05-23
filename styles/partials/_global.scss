@@ -2,6 +2,7 @@
 @use "./mixins" as *;
 @use "./typography" as *;
 
+//global styles
 a {
   text-decoration: none;
   color: $primary-text;
@@ -42,11 +43,6 @@ button {
 }
 
 //nav bar
-// .header-wrapper {
-//   background-color: $primary-background;
-//   max-width: $max-content-width;
-//   margin: 0 auto;
-// }
 .header {
   background-color: $primary-background;
 }
@@ -58,7 +54,6 @@ button {
   @include tablet {
     display: flex;
     align-items: flex-end;
-    // padding-left: 1rem;
   }
 
   @include desktop {
@@ -94,7 +89,6 @@ button {
   }
 
   &__item {
-    // padding-bottom: 1rem;
     width: 100%;
     text-align: center;
     color: $secondary-inactive;
@@ -174,6 +168,9 @@ button {
 
   &__icons {
     padding-top: 1rem;
+    display: flex;
+    width: 7rem;
+    justify-content: space-between;
 
     @include tablet {
       padding-top: 0;

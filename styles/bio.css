@@ -188,6 +188,9 @@ button {
 }
 .socials__icons {
   padding-top: 1rem;
+  display: flex;
+  width: 7rem;
+  justify-content: space-between;
 }
 @media screen and (min-width: 768px) {
   .socials__icons {
@@ -363,6 +366,7 @@ html {
     font-weight: 600;
   }
 }
+
 .about-wrapper {
   max-width: 1090px;
   margin: 0 auto;

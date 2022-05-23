@@ -7,7 +7,6 @@
   background-size: cover;
   height: 13rem;
   width: 100%;
-  // position: relative;
 
   &--overlay {
     background-color: rgba($color: $primary-background, $alpha: 0.5);
@@ -23,41 +22,22 @@
     height: 42rem;
   }
 }
+
+//hero content
 .hero {
-  // padding-top: 1rem;
   max-width: $max-content-width;
   margin: 0 auto;
   height: 100%;
   display: flex;
   align-items: center;
 
-  @include tablet {
-    // flex-direction: column;
-  }
-
-  @include desktop {
-    // flex-direction: row;
-    // justify-content: space-around;
-    // align-items: center;
-    // width: 90%;
-    // padding: 15rem 5rem 5rem 5rem;
-  }
-
   &__text {
     @include page-header-mobile-font;
     color: $primary-text;
     padding-left: 1rem;
-    // position: absolute;
-    // top: 43%;
 
     @include tablet {
       @include page-header-desktop-font;
-      // top: 50%;
-      // left: 3%;
-    }
-
-    @include desktop {
-      // padding-left: 1rem;
     }
   }
 }
@@ -342,6 +322,7 @@
   }
 }
 
+//comment display
 .comment-card {
   display: flex;
   justify-content: space-evenly;
